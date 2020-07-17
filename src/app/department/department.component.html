@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-md-12 navbar container-activity header-view">
+      <div class="col-md-6" style="padding-left: 0px;padding-right: 26px;cursor: pointer;">
+        Department Name
+      </div>
+      <div class="col-md-6">
+        Number of Employees
+      </div>
+    </div>       
+</div>  
+  
+<div class="candidate-section" *ngIf="deptDetails.length > 0">
+    <ul class="collapsible">
+        <li class="list" *ngFor="let dp of deptDetails">
+        <div class="col-md-12 border-list list-append">
+            <div class="col-md-3 col-sm-6 col-xs-6">
+                <span class="badge badge-primary" [ngStyle]="getCustomClass(dp.department)">{{dp.department}}</span>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-6">
+                
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <span class="count-dp">{{dp.count}}</span>
+            </div>
+
+        </div>
+        </li>
+    </ul> 
+</div>    
+  

@@ -1,0 +1,69 @@
+
+.navbar.scrolling-navbar {
+    background: #3f51b5 !important;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+    transition: background .5s ease-in-out,padding .5s ease-in-out;
+    border-radius: 0px !important;
+    margin-bottom: 0px;
+    margin: 0px;
+    padding-left: 43px;
+    text-align: center;
+
+    /* skip-link-wrapper cdk-visually-hidden ng-star-inserted */
+}
+
+.title {
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    padding-left: 29px;
+    margin-left: 0px;
+}
+
+.dept-title {
+    text-align: end;
+    cursor: pointer;
+}
+
+
+/* .fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    height: 58px;
+} */
+
+
+/* ul {
+    padding-left: 0;
+    list-style-type: none;
+} */
+
+/* ul >li {
+    list-style-type: none;
+} */
+
+/* .container-activity {
+    position: fixed;
+    top: 19%;
+    right: 0;
+    left: 0;
+    z-index: 1031;
+    height: 62px;
+}
+
+.collapsible {
+    border-top: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    margin: .5rem 0 1rem 0;
+}
+
+.mar-zero {
+    margin: 0px !important;
+} */

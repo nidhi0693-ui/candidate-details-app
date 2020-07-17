@@ -1,0 +1,18 @@
+<div style="overflow: hidden;">
+    <nav class="mar-zero row navbar fixed-top navbar-expand-md navbar-light white double-nav scrolling-navbar">
+      <span *ngIf="!isCandidateView" (click)="navigateBack()" style="color: #fff;font-size: 19px; padding-top: 6px;">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+      </span>
+      <div class="col-md-12">
+        <div class="col-md-10 col-sm-6 col-xs-6 title"> 
+          <p>Candidate Details</p>
+        </div>
+        <div class="col-md-2 col-sm-6 col-xs-6 dept-title">
+          <p *ngIf="isCandidateView" (click)="viewDepartment()">Department Details</p>
+        </div>
+      </div>    
+    </nav>
+    <app-candidate-view *ngIf="isCandidateView"></app-candidate-view>
+    <app-department *ngIf="!isCandidateView"></app-department>
+</div>
+

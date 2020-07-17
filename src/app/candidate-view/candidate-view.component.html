@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="col-md-12 navbar container-activity">
+    <div class="col-md-6" style="padding-left: 0px;padding-right: 26px;">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="glyphicon glyphicon-search"></i>
+          </div>
+          <input type="text" class="form-control" name="searchString" placeholder="Type to search..." [(ngModel)]="searchString"/>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <i class="fa fa-filter" aria-hidden="true"></i>
+      <div class="btn-group">
+          <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            -- SORT BY --
+          </button>
+          <div class="dropdown-menu">
+              <a class="dropdown-item" href="#" (click)="sortName('name')">Name</a>
+              <a class="dropdown-item" href="#" (click)="sortDate()">Joining Date</a>
+          </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <i class="fa fa-trash-o" aria-hidden="true"></i>
+      <div class="btn-group">
+        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          -- REMOVE ALL BY DEPARTMENT --
+        </button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" (click)="deleteDepartment('Finance')">Finance</a>
+            <a class="dropdown-item" (click)="deleteDepartment('Operations')">Operations</a>
+            <a class="dropdown-item" (click)="deleteDepartment('HR')">HR</a>
+            <a class="dropdown-item" (click)="deleteDepartment('Development')">Development</a>
+            <!-- <a class="dropdown-item" href="#">{{ dp.deptName | uppercase }}</a> -->
+        </div>
+    </div>
+    </div>
+    
+</div>
+</div>
+
+<div class="candidate-section">
+  <ul #selectElem class="collapsible">
+    <li class="list" *ngFor="let cd of candidateData| filterName : 'name' : searchString; let i = index">
+      <div class="col-md-12 border-list">
+        <div class="row col-md-12 list-name">
+          <div class="col-md-6 col-sm-6 col-xs-6"><span class="label">Name: </span><span class="label-title">{{cd.name}}</span></div>
+          <div class="col-md-3 col-sm-6 col-xs-6">
+            <span class="label">Joining Date: </span><span class="label-title">{{cd.joining_date}}</span>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-6">
+              <span class="badge badge-primary" [ngStyle]="getCustomClass(cd.department)">{{cd.department}}</span>
+          </div>
+
+        </div>
+      </div>
+      <!-- <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div> -->
+    </li>
+  </ul> 
+  <div class="no-data" *ngIf="candidateData.length == 0">
+    
+      <p class="centre-display">There are no details...</p>
+    
+  </div>
+</div>    
